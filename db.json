@@ -1,80 +1,92 @@
 [
-   {
-      "fieldGroupClassName":"row",
-      "fieldGroup":[
-         {
-            "className":"col-6",
-            "type":"input",
-            "key":"firstName",
-            "templateOptions":{
-               "label":"First Name"
-            }
-         },
-         {
-            "className":"col-6",
-            "type":"input",
-            "key":"lastName",
-            "templateOptions":{
-               "label":"Last Name"
-            },
-            "expressionProperties":{
-               "templateOptions.disabled":"!model.firstName"
-            }
-         }
-      ]
-   },
-   {
-      "className":"section-label",
-      "template":"<hr /><div><strong>Address:</strong></div>"
-   },
-   {
-      "fieldGroupClassName":"row",
-      "fieldGroup":[
-         {
-            "className":"col-6",
-            "type":"input",
-            "key":"street",
-            "templateOptions":{
-               "label":"Street"
-            }
-         },
-         {
-            "className":"col-3",
-            "type":"input",
-            "key":"cityName",
-            "templateOptions":{
-               "label":"City"
-            }
-         },
-         {
-            "className":"col-3",
-            "type":"input",
-            "key":"zip",
-            "templateOptions":{
-               "type":"number",
-               "label":"Zip",
-               "max":99999,
-               "min":0,
-               "pattern":"\\d{5}"
-            }
-         }
-      ]
-   },
-   {
-      "template":"<hr />"
-   },
-   {
-      "type":"textarea",
-      "key":"otherInput",
-      "templateOptions":{
-         "label":"Other Input"
-      }
-   },
-   {
-      "type":"checkbox",
-      "key":"otherToo",
-      "templateOptions":{
-         "label":"Other Checkbox"
-      }
-   }
-]
+    {
+      fieldGroupClassName: 'row',
+      fieldGroup: [
+        {
+          className: 'col-6',
+          type: 'input',
+          key: 'firstName',
+          templateOptions: {
+            label: 'First Name',
+            pattern: /^[a-z\s]{0,255}$/i,
+            required: true,
+            placeholder: 'Example:Jose',
+          },
+        },
+        {
+          className: 'col-6',
+          type: 'input',
+          key: 'lastName',
+          templateOptions: {
+            label: 'Last Name',
+            pattern: /^[a-z\s]{0,255}$/i,
+            required: true,
+            placeholder: 'Example:Rodriguez',
+          },
+         
+        },
+      ],
+    },
+    {
+      className: 'section-label',
+      template: '<hr /><div><strong>Address:</strong></div>',
+    },
+    {
+      fieldGroupClassName: 'row',
+      fieldGroup: [
+        {
+          className: 'col-6',
+          type: 'input',
+          key: 'street',
+          templateOptions: {
+            label: 'Street',
+            placeholder: 'AV o Calle',
+            required: true,
+          },
+        },
+        {
+          className: 'col-3',
+          type: 'input',
+          key: 'cityName',
+          templateOptions: {
+            label: 'City',
+            placeholder: 'Madrid',
+            required: true,
+          },
+        },
+        {
+          className: 'col-3',
+          type: 'input',
+          key: 'zip',
+          templateOptions: {
+            type: 'number',
+            label: 'Zip',
+            max: 99999,
+            min: 0,
+            pattern: '\\d{5}',
+            placeholder: '23700',
+            required: true,
+          },
+        },
+      ],
+    },
+    { template: '<hr />' },
+    {
+      type: 'textarea',
+      key: 'Phone',
+      templateOptions: {
+        label: 'Phone',
+        placeholder: '+34604353698',
+        pattern: /^[0-9\-\+]{12,12}$/i,
+      },
+    },
+    {
+      type: 'textarea',
+      key: 'Email',
+      templateOptions: {
+        label: 'Email',
+        placeholder: 'Example@Algogo.com',
+        pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+      },
+    },
+  ];
