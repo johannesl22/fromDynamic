@@ -8,12 +8,6 @@
             "key":"firstName",
             "templateOptions":{
                "label":"First Name",
-               "pattern":"/^"[
-                  "a-z\\s"
-               ]{
-                  0,
-                  255
-               }"$/i",
                "required":true,
                "placeholder":"Example:Jose"
             }
@@ -24,12 +18,6 @@
             "key":"lastName",
             "templateOptions":{
                "label":"Last Name",
-               "pattern":"/^"[
-                  "a-z\\s"
-               ]{
-                  0,
-                  255
-               }"$/i",
                "required":true,
                "placeholder":"Example:Rodriguez"
             }
@@ -72,46 +60,49 @@
                "label":"Zip",
                "max":99999,
                "min":0,
-               "pattern":"\\d{5}",
-               "placeholder":"23700",
-               "required":true
+               "pattern":"\\d{5}"
             }
          }
       ]
    },
    {
-      "template":"<hr />"
+      "className":"section-label",
+      "template":"<hr /><div><strong>Contanto:</strong></div>"
    },
    {
-      "type":"textarea",
-      "key":"Phone",
-      "templateOptions":{
-         "label":"Phone",
-         "placeholder":"+34604353698",
-         "pattern":"/^"[
-            0-9\-\+
-         ]{
-            12,
-            12
-         }"$/i"
-      }
-   },
-   {
-      "type":"textarea",
-      "key":"Email",
-      "templateOptions":{
-         "label":"Email",
-         "placeholder":"Example@Algogo.com",
-         "pattern":"/^"[
-            "\\w-\\."
-         ]"+@("[
-            "\\w-"
-         ]"+\\.)+"[
-            "\\w-"
-         ]{
-            2,
-            4
-         }"$/"
-      }
+      "fieldGroupClassName":"row",
+      "fieldGroup":[
+         {
+            "className":"col-6",
+            "type":"input",
+            "key":"Email",
+            "templateOptions":{
+               "label":"Email",
+               "required":true,
+               "placeholder":"Alguien@algo.com",
+                  "pattern":"/^([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}$/"
+            }
+         },
+         {
+            "className":"col-3",
+            "type":"input",
+            "key":"Movil",
+            "templateOptions":{
+               "label":"Movil",
+               "required":true,
+               "placeholder":"+3412365478"
+            }
+         },
+         {
+            "className":"col-3",
+            "type":"input",
+            "key":"Fijo",
+            "templateOptions":{
+               "label":"Fijo",
+               "required":true,
+               "placeholder":"3412365478"
+            }
+         }
+      ]
    }
-]";"
+]
